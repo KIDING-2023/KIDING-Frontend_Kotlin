@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="248.78dp"
+        android:layout_height="120dp"
+        android:src="@drawable/greeting_text"
+        android:layout_gravity="center"
+        android:layout_marginTop="99.97dp"/>
+
+    <EditText
+        android:id="@+id/input_nickname"
+        android:layout_width="261.32dp"
+        android:layout_height="49.82dp"
+        android:layout_gravity="center"
+        android:background="@drawable/nickname_box"
+        android:layout_marginTop="131.68dp"
+        android:text="       닉네임을 입력하세요"
+        android:fontFamily="@font/nanum"
+        android:textSize="17sp"
+        android:textColor="#AAAAAA" />
+
+    <TextView
+        android:id="@+id/input_error"
+        android:layout_width="261.32dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="26.22dp"
+        android:text="⦁ 5글자 이하로 입력해주세요"
+        android:fontFamily="@font/nanum"
+        android:textSize="13sp"
+        android:textColor="#FFA37C"
+        android:layout_marginTop="11.83dp"/>
+
+    <Button
+        android:layout_width="261.32dp"
+        android:layout_height="49.82dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="9.85dp"
+        android:backgroundTint="#FF6A2B"
+        android:text="시작하기"
+        android:fontFamily="@font/nanum"
+        android:textSize="17sp"/>
+
+</LinearLayout>
