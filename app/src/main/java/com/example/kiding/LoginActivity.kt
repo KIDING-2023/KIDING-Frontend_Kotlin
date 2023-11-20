@@ -10,6 +10,9 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
+    // 금지어 목록
+    private val prohibitedWords = listOf("시발", "병신", "존나", "바보", "멍청이", "윤석열", "문재인", "박근혜", "이명박")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -23,8 +26,13 @@ class LoginActivity : AppCompatActivity() {
                 binding.eclipse.visibility = View.VISIBLE
                 binding.inputError.text = "닉네임을 입력해주세요"
             } else {
+                // 금지어 확인
+                if (containsProhibitedWord(nickname)) {
+                    binding.eclipse.visibility = View.VISIBLE
+                    binding.inputError.text = "금지어가 포함되어 있습니다"
+                }
                 // 닉네임 길이 확인
-                if (nickname.length > 5) {
+                else if (nickname.length > 5) {
                     binding.eclipse.visibility = View.VISIBLE
                     binding.inputError.text = "5글자 이하로 입력해주세요"
                 } else {
@@ -38,6 +46,16 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun containsProhibitedWord(s: String): Boolean {
+        val lowerCaseInput = s.toLowerCase()
+        for (prohibitedWord in prohibitedWords) {
+            if (lowerCaseInput.contains(prohibitedWord.toLowerCase())) {
+                return true
+            }
+        }
+        return false
     }
 
     private fun containsSpecialCharacter(s: String): Boolean {
