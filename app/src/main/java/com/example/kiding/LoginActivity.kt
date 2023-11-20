@@ -1,5 +1,6 @@
 package com.example.kiding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -11,7 +12,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     // 금지어 목록
-    private val prohibitedWords = listOf("시발", "병신", "존나", "바보", "멍청이", "윤석열", "문재인", "박근혜", "이명박")
+    private val prohibitedWords = listOf("시발", "병신", "존나", "바보", "멍청이", "윤석열", "문재인", "박근혜", "이명박",
+    "마약", "개", "Fuck")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,23 +28,25 @@ class LoginActivity : AppCompatActivity() {
                 binding.eclipse.visibility = View.VISIBLE
                 binding.inputError.text = "닉네임을 입력해주세요"
             } else {
+                // 닉네임 길이 확인
+                if (nickname.length > 5) {
+                    binding.eclipse.visibility = View.VISIBLE
+                    binding.inputError.text = "5글자 이하로 입력해주세요"
+                }
+                // 특수문자 확인
+                else if (containsSpecialCharacter(nickname)) {
+                    binding.eclipse.visibility = View.VISIBLE
+                    binding.inputError.text = "특수문자는 포함할 수 없습니다"
+                }
                 // 금지어 확인
-                if (containsProhibitedWord(nickname)) {
+                else if (containsProhibitedWord(nickname)) {
                     binding.eclipse.visibility = View.VISIBLE
                     binding.inputError.text = "금지어가 포함되어 있습니다"
                 }
-                // 닉네임 길이 확인
-                else if (nickname.length > 5) {
-                    binding.eclipse.visibility = View.VISIBLE
-                    binding.inputError.text = "5글자 이하로 입력해주세요"
-                } else {
-                    // 특수문자 확인
-                    if (containsSpecialCharacter(nickname)) {
-                        binding.eclipse.visibility = View.VISIBLE
-                        binding.inputError.text = "특수문자는 포함할 수 없습니다"
-                    } else {
-                        // 가입 성공
-                    }
+                // 가입 성공
+                else {
+                    intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
                 }
             }
         }
