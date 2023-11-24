@@ -45,7 +45,8 @@ class LoginActivity : AppCompatActivity() {
                 }
                 // 가입 성공
                 else {
-                    intent = Intent(this, HomeActivity::class.java)
+                    intent = Intent(this, LoginSplashActivity::class.java)
+                    intent.putExtra("nickname", binding.inputNickname.text.toString())
                     startActivity(intent)
                 }
             }

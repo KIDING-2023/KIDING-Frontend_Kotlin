@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseCharacterActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="248.78dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="99.97dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="안녕하세요 "
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum"/>
+
+            <TextView
+                android:id="@+id/nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="님,"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
+            android:text="캐릭터를 선택해주세요"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:fontFamily="@font/nanum"/>
+
+    </LinearLayout>
+    
+    <ImageView
+        android:layout_width="244dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:src="@drawable/text_logo"/>
+
+</LinearLayout>
