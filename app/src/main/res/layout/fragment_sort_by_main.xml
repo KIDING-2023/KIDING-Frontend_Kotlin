@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SortByMainFragment">
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbarThumbHorizontal="@drawable/card_scrollbar"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarTrackHorizontal="@drawable/card_scrollbar_background"
+        android:scrollbarStyle="insideInset">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/kikisday"
+                android:layout_width="231.11dp"
+                android:layout_height="317.79dp"
+                android:src="@drawable/kikisday_card"
+                android:layout_marginLeft="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13.18dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/kikisday"
+                app:layout_constraintTop_toTopOf="@id/kikisday">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="플레이 "
+                    android:textColor="#FF8A5B"
+                    android:textSize="11.38sp" />
+
+                <TextView
+                    android:id="@+id/kikisday_usercount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="00"
+                    android:textColor="#FF8A5B"
+                    android:textSize="11.38sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="명"
+                    android:textColor="#FF8A5B"
+                    android:textSize="11.38sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="205.22dp"
+                android:layout_height="200.54dp"
+                android:layout_marginTop="28.44dp"
+                android:src="@drawable/kikisday_character"
+                app:layout_constraintEnd_toEndOf="@+id/kikisday"
+                app:layout_constraintTop_toTopOf="@+id/kikisday" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="114dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="19.91dp"
+                android:layout_marginTop="30.81dp"
+                android:src="@drawable/kikisday_subtitle"
+                app:layout_constraintStart_toStartOf="@+id/kikisday"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="29dp"
+                android:src="@drawable/kikisday_title"
+                android:layout_marginTop="2.76dp"
+                android:layout_marginLeft="18.16dp"
+                app:layout_constraintStart_toStartOf="@+id/kikisday"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+<!--            다음 카드 예시-->
+            <ImageView
+                android:layout_width="231.11dp"
+                android:layout_height="317.79dp"
+                android:layout_marginLeft="11.43dp"
+                android:src="@drawable/kikisday_card"
+                app:layout_constraintStart_toEndOf="@+id/kikisday"
+                app:layout_constraintTop_toTopOf="parent" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </HorizontalScrollView>
+
+</FrameLayout>

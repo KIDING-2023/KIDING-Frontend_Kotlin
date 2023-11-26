@@ -10,13 +10,13 @@ class LoginSplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_splash)
 
-        val nickname = intent.getStringExtra("nickname")
+        // val nickname = intent.getStringExtra("nickname")
 
-        // 캐릭터 선택 화면으로 넘어가도록
+        // 캐릭터 선택 화면으로 넘어가도록 (추후에)
         Handler().postDelayed({
-            val intent = Intent(this, ChooseCharacterActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.putExtra("nickname", nickname)
+            // intent.putExtra("nickname", nickname)
             startActivity(intent)
             finish()
         },DURATION)
