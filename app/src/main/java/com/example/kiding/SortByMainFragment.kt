@@ -1,5 +1,6 @@
 package com.example.kiding
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +26,10 @@ class SortByMainFragment : Fragment() {
         binding = FragmentSortByMainBinding.inflate(inflater, container, false)
 
         binding.kikisday.setOnClickListener {
-
+            activity?.let{
+                val intent = Intent(context, KikisdayPlayActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         return binding.root

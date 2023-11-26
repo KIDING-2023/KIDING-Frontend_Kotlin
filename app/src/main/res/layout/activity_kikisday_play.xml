@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9EEFC"
+    tools:context=".KikisdayPlayActivity">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="13.16dp"
+        android:layout_height="20dp"
+        android:src="@drawable/back_icon"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="341.69dp"
+        android:layout_height="458.21dp"
+        android:src="@drawable/kikiplay_bg1"
+        android:layout_marginTop="86.74dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="307.39dp"
+        android:layout_height="389.61dp"
+        android:layout_marginTop="121.04dp"
+        android:src="@drawable/kikiplay_bg2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="237.67dp"
+        android:layout_height="250.17dp"
+        android:src="@drawable/kikiday_bg3"
+        android:layout_marginTop="190.76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="158.12dp"
+        android:layout_height="15.01dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="546.62dp"
+        android:src="@drawable/kikisday_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="209.6dp"
+        android:layout_height="40.52dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/kikisday_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum"
+            android:text="부모와 아이의 교감을 돕는 팝업북 형태의 보드게임으로, 평소에 나눠보"
+            android:textColor="#868686"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/nanum"
+            android:text="지 못했던 8가지 분야의 심리를 공유할 수 있습니다."
+            android:textColor="#868686"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/kikisday_playbtn"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="47dp"
+        android:src="@drawable/kikiplay_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+    <ImageView
+        android:layout_width="64.49dp"
+        android:layout_height="22.37dp"
+        android:src="@drawable/kikiplay_btn_text"
+        app:layout_constraintBottom_toBottomOf="@+id/kikisday_playbtn"
+        app:layout_constraintEnd_toEndOf="@+id/kikisday_playbtn"
+        app:layout_constraintStart_toStartOf="@+id/kikisday_playbtn"
+        app:layout_constraintTop_toTopOf="@+id/kikisday_playbtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
