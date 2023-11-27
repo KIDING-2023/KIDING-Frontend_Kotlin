@@ -32,6 +32,13 @@ class SortByMainFragment : Fragment() {
             }
         }
 
+        binding.space.setOnClickListener {
+            activity?.let{
+                val intent = Intent(context, SpacePlayActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
         return binding.root
     }
 

@@ -35,95 +35,43 @@
         app:layout_constraintTop_toBottomOf="@+id/menu" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DFDFDF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:orientation="horizontal" />
+
+    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="62.68dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <ImageView
             android:id="@+id/ranking_area"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25.41dp"
+            android:layout_height="34.67dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:src="@drawable/ranking_under" />
 
-            <ImageView
-                android:id="@+id/ranking_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/ranking_logo" />
-
-            <TextView
-                android:id="@+id/ranking_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/nanum"
-                android:text="랭킹"
-                android:textColor="#75777E"
-                android:textSize="10sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
             android:id="@+id/home_area"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25.41dp"
+            android:layout_height="34.67dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:src="@drawable/home_under" />
 
-            <ImageView
-                android:id="@+id/home_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/home_logo" />
-
-            <TextView
-                android:id="@+id/home_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/nanum"
-                android:text="홈"
-                android:textColor="#FF8A5B"
-                android:textSize="10sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
             android:id="@+id/mypage_area"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25.41dp"
+            android:layout_height="34.67dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/mypage_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/mypage_logo" />
-
-            <TextView
-                android:id="@+id/mypage_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/nanum"
-                android:text="MY"
-                android:textColor="#75777E"
-                android:textSize="10sp" />
-
-        </LinearLayout>
+            android:src="@drawable/mypage_under" />
 
     </LinearLayout>
     

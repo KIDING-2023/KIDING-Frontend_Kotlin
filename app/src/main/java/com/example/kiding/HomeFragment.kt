@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         sortByMain()
 
         binding.mainArea.setOnClickListener {
-            // 메인 표시
+            // 메인 활성화
             binding.mainEclipse.visibility = View.VISIBLE
             binding.mainText.setTextColor(Color.parseColor("#000000"))
             binding.popularityEclipse.visibility = View.INVISIBLE
@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.popularityArea.setOnClickListener {
-            // 인기순 표시
+            // 인기순 활성화
             binding.mainEclipse.visibility = View.INVISIBLE
             binding.mainText.setTextColor(Color.parseColor("#75777E"))
             binding.popularityEclipse.visibility = View.VISIBLE
@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.recentArea.setOnClickListener {
-            // 최신순 표시
+            // 최신순 활성화
             binding.mainEclipse.visibility = View.INVISIBLE
             binding.mainText.setTextColor(Color.parseColor("#75777E"))
             binding.popularityEclipse.visibility = View.INVISIBLE

@@ -3,16 +3,15 @@ package com.example.kiding
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.kiding.databinding.ActivityKikisdayPlayBinding
-import com.example.kiding.databinding.ActivityLoginBinding
+import com.example.kiding.databinding.ActivitySpacePlayBinding
 
-class KikisdayPlayActivity : AppCompatActivity() {
+class SpacePlayActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityKikisdayPlayBinding
+    private lateinit var binding: ActivitySpacePlayBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityKikisdayPlayBinding.inflate(layoutInflater)
+        binding = ActivitySpacePlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // 홈화면으로

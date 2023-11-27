@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
@@ -21,22 +21,21 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginTop="28.35dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="33.64dp"
             android:orientation="horizontal">
-
+            
             <LinearLayout
                 android:id="@+id/main_area"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
-
+                
                 <ImageView
                     android:id="@+id/main_eclipse"
-                    android:visibility="visible"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5.55dp"
+                    android:layout_height="5.55dp"
                     android:layout_gravity="center"
                     android:src="@drawable/eclipse" />
 
@@ -47,24 +46,24 @@
                     android:layout_marginLeft="5dp"
                     android:text="메인"
                     android:fontFamily="@font/nanum"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
+                    android:textSize="14.22sp"
+                    android:textColor="#000000" />
+                
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/popularity_area"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="28.94dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/popularity_eclipse"
-                    android:visibility="invisible"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5.55dp"
+                    android:layout_height="5.55dp"
                     android:layout_gravity="center"
+                    android:visibility="invisible"
                     android:src="@drawable/eclipse" />
 
                 <TextView
@@ -74,24 +73,24 @@
                     android:layout_marginLeft="5dp"
                     android:text="인기순"
                     android:fontFamily="@font/nanum"
-                    android:textColor="#75777E"
-                    android:textSize="15sp" />
+                    android:textSize="14.22sp"
+                    android:textColor="#75777E" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/recent_area"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="28.94dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/recent_eclipse"
-                    android:visibility="invisible"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5.55dp"
+                    android:layout_height="5.55dp"
                     android:layout_gravity="center"
+                    android:visibility="invisible"
                     android:src="@drawable/eclipse" />
 
                 <TextView
@@ -101,23 +100,23 @@
                     android:layout_marginLeft="5dp"
                     android:text="최근순"
                     android:fontFamily="@font/nanum"
-                    android:textColor="#75777E"
-                    android:textSize="15sp" />
+                    android:textSize="14.22sp"
+                    android:textColor="#75777E" />
 
             </LinearLayout>
-
+            
         </LinearLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/sort_by_fragment"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="317.79dp"
             android:layout_marginTop="15.45dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="37dp">
+            android:layout_marginTop="37.18dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -125,37 +124,10 @@
                 android:layout_height="111dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ranking_box"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18.13dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="21.81dp"
-                    android:layout_height="21.81dp"
-                    android:src="@drawable/ranking_icon"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="95dp"
-                    android:layout_height="21dp"
-                    android:layout_marginLeft="5dp"
-                    android:src="@drawable/todays_ranking"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -167,35 +139,15 @@
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="289.72dp"
-                android:layout_height="40.40dp"
-                android:layout_marginTop="17.26dp"
-                android:src="@drawable/ranking_userbox"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="28dp"
-                android:layout_height="21dp"
-                android:layout_marginLeft="16.85dp"
-                android:layout_marginTop="9.77dp"
-                android:src="@drawable/ranking_text"
-                app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="9.63dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4">
+                android:layout_marginRight="22.89dp"
+                android:layout_marginBottom="22.89dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/imageView">
 
                 <TextView
                     android:id="@+id/ranking_number"
@@ -220,14 +172,14 @@
                 android:id="@+id/ranking_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이용자"
                 android:fontFamily="@font/nanum"
-                android:textSize="18.96dp"
+                android:text="이용자"
                 android:textColor="#000000"
+                android:textSize="18.96dp"
+                android:layout_marginBottom="22.89dp"
                 android:layout_marginRight="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
