@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kikisday_tutorial1_bg"
-    tools:context=".KikisdayTutorial2Activity">
+    android:background="@drawable/kikisday_dice_bg"
+    tools:context=".KikisdayDiceActivity">
 
     <ImageView
         android:id="@+id/back_btn"
@@ -33,21 +33,21 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="339.79dp"
-        android:layout_height="229.08dp"
+        android:layout_height="169.78dp"
         android:layout_marginTop="125.22dp"
-        android:src="@drawable/kikisday_tutorial2_text"
+        android:src="@drawable/kikisday_dice_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/okBtn"
-        android:layout_width="322.07dp"
-        android:layout_height="44.75dp"
-        android:layout_marginBottom="60.25dp"
-        android:src="@drawable/kikisday_ok_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/dice_swipe"
+        android:layout_width="87.87dp"
+        android:layout_height="139.91dp"
+        android:layout_marginTop="19.89dp"
+        android:src="@drawable/dice_swipe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
