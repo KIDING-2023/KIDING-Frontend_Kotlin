@@ -19,5 +19,11 @@ class SpacePlayActivity : AppCompatActivity() {
             intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
+
+        // 튜토리얼1로 이동
+        binding.playBtn.setOnClickListener {
+            intent = Intent(this, SpaceTutorial1Activity::class.java)
+            startActivity(intent)
+        }
     }
 }

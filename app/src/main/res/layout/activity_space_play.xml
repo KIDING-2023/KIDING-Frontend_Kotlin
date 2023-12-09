@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/space_playbtn"
+        android:id="@+id/playBtn"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:src="@drawable/kikiplay_btn"
