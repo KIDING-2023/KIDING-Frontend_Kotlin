@@ -11,8 +11,16 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Chronometer
+import androidx.annotation.Nullable
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.gif.GifDrawable
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.RequestOptions
 import com.example.kiding.databinding.ActivityKikisdayDiceBinding
+import javax.sql.DataSource
 
 class KikisdayDiceActivity : AppCompatActivity() {
 
@@ -59,10 +67,36 @@ class KikisdayDiceActivity : AppCompatActivity() {
             distanceX: Float,
             distanceY: Float
         ): Boolean {
-            // 아래에서 위로 스크롤 시 KikisdaySongActivity로 이동
+            // 아래에서 위로 스크롤 시 gif 표시
             if (distanceY > 0) {
-                val intent = Intent(this@KikisdayDiceActivity, KikisdaySongActivity::class.java)
-                startActivity(intent)
+                Glide.with(this@KikisdayDiceActivity)
+                    .asGif()
+                    .load(R.raw.dice1) // your_gif_file_name에는 실제 GIF 파일의 이름이 들어가야 합니다.
+                    .listener(object : RequestListener<GifDrawable> {
+                        override fun onLoadFailed(
+                            e: GlideException?,
+                            model: Any?,
+                            target: com.bumptech.glide.request.target.Target<GifDrawable>?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            return false
+                        }
+
+                        override fun onResourceReady(
+                            resource: GifDrawable?,
+                            model: Any?,
+                            target: com.bumptech.glide.request.target.Target<GifDrawable>?,
+                            dataSource: com.bumptech.glide.load.DataSource?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            // GIF Drawable이 준비되면 loop count를 설정합니다.
+                            resource?.setLoopCount(1)
+                            return false
+                        }
+                    })
+                    .into(binding.dice)
+//                val intent = Intent(this@KikisdayDiceActivity, KikisdaySongActivity::class.java)
+//                startActivity(intent)
             }
             return super.onScroll(e1, e2, distanceX, distanceY)
         }
