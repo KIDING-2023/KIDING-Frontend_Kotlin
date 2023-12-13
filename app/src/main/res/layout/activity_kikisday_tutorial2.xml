@@ -41,6 +41,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:layout_width="360dp"
+        android:layout_height="302.53dp"
+        android:layout_marginTop="370.14dp"
+        android:src="@drawable/kikisday_tutorial2_ch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/okBtn"
         android:layout_width="322.07dp"
         android:layout_height="44.75dp"
