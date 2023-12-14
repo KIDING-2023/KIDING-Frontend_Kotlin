@@ -1,13 +1,22 @@
 package com.example.kiding
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.view.View
 import android.widget.Chronometer
+import androidx.vectordrawable.graphics.drawable.Animatable2Compat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.gif.GifDrawable
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.example.kiding.databinding.ActivitySpaceDiceBinding
+import java.util.Random
 
 class SpaceDiceActivity : AppCompatActivity() {
 
@@ -52,11 +61,55 @@ class SpaceDiceActivity : AppCompatActivity() {
             distanceX: Float,
             distanceY: Float
         ): Boolean {
-//            // 아래에서 위로 스크롤 시 SpaceSongActivity로 이동
-//            if (distanceY > 0) {
-//                val intent = Intent(this@SpaceDiceActivity, SpaceSongActivity::class.java)
-//                startActivity(intent)
-//            }
+            // 아래에서 위로 스크롤 시
+            if (distanceY > 0) {
+                // 화살표 삭제
+                binding.diceSwipe.visibility = View.INVISIBLE
+                // 랜덤으로 dice1, dice2, dice3 중 하나를 선택
+                val randomDice = when (Random().nextInt(3)) {
+                    0 -> R.raw.dice1
+                    1 -> R.raw.dice2
+                    else -> R.raw.dice3
+                }
+                // gif로 전환
+                Glide.with(this@SpaceDiceActivity)
+                    .asGif()
+                    .load(randomDice)
+                    .listener(object : RequestListener<GifDrawable> {
+                        override fun onLoadFailed(
+                            e: GlideException?,
+                            model: Any?,
+                            target: com.bumptech.glide.request.target.Target<GifDrawable>?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            return false
+                        }
+
+                        override fun onResourceReady(
+                            resource: GifDrawable?,
+                            model: Any?,
+                            target: Target<GifDrawable>?,
+                            dataSource: com.bumptech.glide.load.DataSource?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            // GIF Drawable이 준비되면 loop count를 설정합니다.
+                            resource?.setLoopCount(1)
+
+//                            // GIF 재생이 끝나면 화면을 KikisdaySongActivity로 전환합니다.
+//                            resource?.clearAnimationCallbacks() // 이전 콜백 제거
+//                            resource?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
+//                                override fun onAnimationEnd(drawable: Drawable?) {
+//                                    super.onAnimationEnd(drawable)
+//                                    val intent = Intent(this@SpaceDiceActivity, KikisdaySongActivity::class.java)
+//                                    startActivity(intent)
+//                                }
+//                            })
+
+                            return false
+                        }
+                    })
+                    .into(binding.dice)
+            }
             return super.onScroll(e1, e2, distanceX, distanceY)
         }
     }
