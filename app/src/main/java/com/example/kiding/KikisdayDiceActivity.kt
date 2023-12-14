@@ -3,11 +3,13 @@ package com.example.kiding
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.view.View
 import android.widget.Chronometer
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import com.bumptech.glide.Glide
@@ -62,8 +64,11 @@ class KikisdayDiceActivity : AppCompatActivity() {
             distanceX: Float,
             distanceY: Float
         ): Boolean {
-            // 아래에서 위로 스크롤 시 gif 표시
+            // 아래에서 위로 스크롤 시
             if (distanceY > 0) {
+                // 화살표 삭제
+                binding.diceSwipe.visibility = View.INVISIBLE
+                // gif로 전환
                 Glide.with(this@KikisdayDiceActivity)
                     .asGif()
                     .load(R.raw.dice1) 

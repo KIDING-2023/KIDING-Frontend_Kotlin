@@ -42,6 +42,7 @@
 
     <ImageView
         android:id="@+id/dice_swipe"
+        android:visibility="visible"
         android:layout_width="87.87dp"
         android:layout_height="139.91dp"
         android:layout_marginTop="19.89dp"
