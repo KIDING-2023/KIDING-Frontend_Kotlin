@@ -13,6 +13,39 @@
         android:theme="@style/Theme.KIDING"
         tools:targetApi="31">
         <activity
+            android:name=".KikisdayRandomDice2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday10Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday9Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday8Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayRandomDiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".SpaceDiceActivity"
             android:exported="false" />
         <activity
