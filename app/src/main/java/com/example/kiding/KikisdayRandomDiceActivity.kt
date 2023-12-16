@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -36,10 +37,16 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
         chronometer.base = SystemClock.elapsedRealtime() - elapsedTime
         chronometer.start()
 
-        // 튜토리얼 2 화면으로 전환
+        // 이전 화면으로 전환
         binding.backBtn.setOnClickListener {
             chronometer.stop()
-            intent = Intent(this, KikisdaySongActivity::class.java)
+            val previousActivity = when (intent.getIntExtra("currentNumber", 0)) {
+                2 -> Kikisday2Activity::class.java
+                3 -> Kikisday3Activity::class.java
+                4 -> Kikisday4Activity::class.java
+                else -> KikisdaySongActivity::class.java
+            }
+            intent = Intent(this, previousActivity)
             intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
             startActivity(intent)
         }
@@ -65,7 +72,7 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
             if (distanceY > 0) {
                 // 화살표 삭제
                 binding.diceSwipe.visibility = View.INVISIBLE
-                // 랜덤으로 dice1, dice2, dice3 중 하나를 선택
+                // 랜덤으로 dice1, dice2, dice3 중 하나를 표시
                 val randomDice = when (Random().nextInt(3)) {
                     0 -> R.raw.dice1
                     1 -> R.raw.dice2
@@ -95,18 +102,40 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
                             // GIF Drawable이 준비되면 loop count를 설정합니다.
                             resource?.setLoopCount(1)
 
-//                            // GIF 재생이 끝나면 화면 전환
-//                            resource?.clearAnimationCallbacks() // 이전 콜백 제거
-//                            resource?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
-//                                override fun onAnimationEnd(drawable: Drawable?) {
-//                                    super.onAnimationEnd(drawable)
-//                                    if (randomDice == R.raw.dice1) {
-//                                        val activity =
+                            // GIF 재생이 끝나면 화면 전환
+                            resource?.clearAnimationCallbacks() // 이전 콜백 제거
+                            resource?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
+                                override fun onAnimationEnd(drawable: Drawable?) {
+                                    super.onAnimationEnd(drawable)
+                                    val randomNumber = when (randomDice) {
+                                        R.raw.dice1 -> 1
+                                        R.raw.dice2 -> 2
+                                        else -> 3
+                                    }
+                                    val totalDice = intent.getIntExtra("currentNumber", 0) + randomNumber
+                                    Log.d("currentNumber", intent.getIntExtra("currentNumber", 0).toString())
+                                    Log.d("randomNumber", randomNumber.toString())
+                                    Log.d("totalDice", totalDice.toString())
+                                    val nextActivity = when (totalDice) {
+                                        2 -> Kikisday2Activity::class.java
+                                        3 -> Kikisday3Activity::class.java
+                                        4 -> Kikisday4Activity::class.java
+                                        5 -> Kikisday5Activity::class.java
+                                        6 -> Kikisday6Activity::class.java
+                                        else -> Kikisday7Activity::class.java
+                                    }
+                                    val intent = Intent(this@KikisdayRandomDiceActivity, nextActivity)
+                                    intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
+                                    Log.d("randomNumber", randomNumber.toString())
+//                                    when (randomNumber) {
+//                                        1 -> intent.putExtra("dice", 1)
+//                                        2 -> intent.putExtra("dice", 2)
+//                                        else -> intent.putExtra("dice", 3)
 //                                    }
-//                                    val intent = Intent(this@KikisdayRandomDiceActivity, KikisdaySongActivity::class.java)
-//                                    startActivity(intent)
-//                                }
-//                            })
+                                    intent.putExtra("dice", randomNumber)
+                                    startActivity(intent)
+                                }
+                            })
 
                             return false
                         }

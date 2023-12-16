@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.SystemClock
+import android.util.Log
 import android.widget.Chronometer
 import com.example.kiding.databinding.ActivityKikisdaySongBinding
 
@@ -37,6 +38,8 @@ class KikisdaySongActivity : AppCompatActivity() {
             val intent = Intent(this, KikisdayRandomDiceActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
+            intent.putExtra("currentNumber", 1)
+            Log.d("currentNumber", intent.getIntExtra("currentNumber", 0).toString())
             startActivity(intent)
             finish()
         }, DURATION)

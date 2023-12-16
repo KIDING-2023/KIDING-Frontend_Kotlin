@@ -98,6 +98,8 @@ class KikisdayDiceActivity : AppCompatActivity() {
                                 override fun onAnimationEnd(drawable: Drawable?) {
                                     super.onAnimationEnd(drawable)
                                     val intent = Intent(this@KikisdayDiceActivity, KikisdaySongActivity::class.java)
+                                    intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
+                                    intent.putExtra("currentNumber", 1)
                                     startActivity(intent)
                                 }
                             })
