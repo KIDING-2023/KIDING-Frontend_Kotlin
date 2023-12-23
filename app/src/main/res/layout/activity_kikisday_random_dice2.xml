@@ -60,7 +60,7 @@
         android:id="@+id/dice"
         android:layout_width="360dp"
         android:layout_height="266.68dp"
-        android:src="@drawable/dice_img2"
+        android:src="@drawable/dice_img3"
         android:layout_marginTop="350.96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

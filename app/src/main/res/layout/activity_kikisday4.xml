@@ -31,9 +31,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="339.79dp"
-        android:layout_height="119.95dp"
-        android:layout_marginTop="124.11dp"
+        android:layout_width="336.93dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="120dp"
         android:src="@drawable/kikisday_4_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +41,9 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="172.01dp"
-        android:layout_height="241.37dp"
-        android:layout_marginTop="267.92dp"
+        android:layout_width="170.57dp"
+        android:layout_height="239.34dp"
+        android:layout_marginTop="270dp"
         android:src="@drawable/kikisday_green_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,12 +60,12 @@
         app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
     <ImageView
-        android:layout_width="50.11dp"
-        android:layout_height="50.11dp"
-        android:layout_marginLeft="303.94dp"
-        android:layout_marginBottom="212.08dp"
+        android:layout_width="49.69dp"
+        android:layout_height="49.69dp"
+        android:layout_marginRight="27.96dp"
+        android:layout_marginBottom="197.23dp"
         android:src="@drawable/mark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
