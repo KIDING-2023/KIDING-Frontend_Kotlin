@@ -9,6 +9,11 @@
     tools:context=".KikisdayDiceActivity">
 
     <ImageView
+        android:id="@+id/dice_gif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
         android:id="@+id/back_btn"
         android:layout_width="13.16dp"
         android:layout_height="20dp"
@@ -53,10 +58,10 @@
 
     <ImageView
         android:id="@+id/dice"
-        android:layout_width="wrap_content"
-        android:layout_height="199.26dp"
-        android:layout_marginTop="386.11dp"
-        android:src="@drawable/dice_img"
+        android:layout_width="360dp"
+        android:layout_height="266.68dp"
+        android:src="@drawable/dice_img2"
+        android:layout_marginTop="370.96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -38,6 +38,11 @@ class KikisdayDiceActivity : AppCompatActivity() {
         chronometer.base = SystemClock.elapsedRealtime() - elapsedTime
         chronometer.start()
 
+//        Glide.with(this)
+//            .load(R.drawable.dice_img2)
+//            .override(720, 399)
+//            .into(binding.dice)
+
         // 튜토리얼 2 화면으로 전환
         binding.backBtn.setOnClickListener {
             chronometer.stop()
@@ -66,12 +71,14 @@ class KikisdayDiceActivity : AppCompatActivity() {
         ): Boolean {
             // 아래에서 위로 스크롤 시
             if (distanceY > 0) {
-                // 화살표 삭제
+                // 화살표, 기존 주사위 이미지 삭제
                 binding.diceSwipe.visibility = View.INVISIBLE
+                binding.dice.visibility = View.INVISIBLE
                 // gif로 전환
                 Glide.with(this@KikisdayDiceActivity)
                     .asGif()
-                    .load(R.raw.dice1) 
+                    .load(R.raw.dice1)
+                    //.override(720, 399)
                     .listener(object : RequestListener<GifDrawable> {
                         override fun onLoadFailed(
                             e: GlideException?,
@@ -107,7 +114,7 @@ class KikisdayDiceActivity : AppCompatActivity() {
                             return false
                         }
                     })
-                    .into(binding.dice)
+                    .into(binding.diceGif)
             }
             return super.onScroll(e1, e2, distanceX, distanceY)
         }

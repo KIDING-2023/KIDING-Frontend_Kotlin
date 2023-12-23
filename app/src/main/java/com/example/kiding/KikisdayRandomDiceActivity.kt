@@ -37,6 +37,11 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
         chronometer.base = SystemClock.elapsedRealtime() - elapsedTime
         chronometer.start()
 
+//        Glide.with(this)
+//            .load(R.drawable.dice_img2)
+//            .override(720, 399)
+//            .into(binding.dice)
+
         // 이전 화면으로 전환
         binding.backBtn.setOnClickListener {
             chronometer.stop()
@@ -70,8 +75,9 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
         ): Boolean {
             // 아래에서 위로 스크롤 시
             if (distanceY > 0) {
-                // 화살표 삭제
+                // 화살표, 기존 주사위 이미지 삭제
                 binding.diceSwipe.visibility = View.INVISIBLE
+                binding.dice.visibility = View.INVISIBLE
                 // 랜덤으로 dice1, dice2, dice3 중 하나를 표시
                 val randomDice = when (Random().nextInt(3)) {
                     0 -> R.raw.dice1
@@ -82,6 +88,7 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
                 Glide.with(this@KikisdayRandomDiceActivity)
                     .asGif()
                     .load(randomDice)
+                    //.override(720, 399)
                     .listener(object : RequestListener<GifDrawable> {
                         override fun onLoadFailed(
                             e: GlideException?,
@@ -140,7 +147,7 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
                             return false
                         }
                     })
-                    .into(binding.dice)
+                    .into(binding.diceGif)
             }
             return super.onScroll(e1, e2, distanceX, distanceY)
         }
