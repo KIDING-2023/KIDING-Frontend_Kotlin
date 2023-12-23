@@ -37,10 +37,10 @@ class Kikisday5Activity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // 랜덤 주사위 화면으로
+        // 키딩칩 획득 화면으로
         binding.btn.setOnClickListener {
             chronometer.stop()
-            intent = Intent(this, KikisdayRandomDice2Activity::class.java)
+            intent = Intent(this, KikisdayBlueCompleteActivity::class.java)
             intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
             intent.putExtra("currentNumber", 5)
             startActivity(intent)

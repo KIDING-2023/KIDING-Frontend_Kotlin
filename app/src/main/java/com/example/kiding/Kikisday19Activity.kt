@@ -6,18 +6,18 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
 import android.widget.Chronometer
-import com.example.kiding.databinding.ActivityKikisday10Binding
-import com.example.kiding.databinding.ActivityKikisday5Binding
+import com.example.kiding.databinding.ActivityKikisday16Binding
+import com.example.kiding.databinding.ActivityKikisday19Binding
 
-class Kikisday10Activity : AppCompatActivity() {
+class Kikisday19Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityKikisday10Binding
+    private lateinit var binding: ActivityKikisday19Binding
 
     private lateinit var chronometer: Chronometer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityKikisday10Binding.inflate(layoutInflater)
+        binding = ActivityKikisday19Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         chronometer = binding.chronometer
@@ -26,12 +26,12 @@ class Kikisday10Activity : AppCompatActivity() {
         chronometer.start()
 
         Log.d("dice", intent.getIntExtra("dice", 0).toString())
-        val dice = 10 - intent.getIntExtra("dice", 0)
+        val dice = 19 - intent.getIntExtra("dice", 0)
 
         // 이전 화면으로
         binding.backBtn.setOnClickListener {
             chronometer.stop()
-            intent = Intent(this, KikisdayRandomDice2Activity::class.java)
+            intent = Intent(this, KikisdayRandomDice4Activity::class.java)
             intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
             intent.putExtra("currentNumber", dice)
             startActivity(intent)
@@ -40,9 +40,9 @@ class Kikisday10Activity : AppCompatActivity() {
         // 키딩칩 획득 화면으로
         binding.btn.setOnClickListener {
             chronometer.stop()
-            intent = Intent(this, KikisdaySkyblueCompleteActivity::class.java)
+            intent = Intent(this, KikisdayRedComplete3Activity::class.java)
             intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
-            intent.putExtra("currentNumber", 10)
+            intent.putExtra("currentNumber", 19)
             startActivity(intent)
         }
     }

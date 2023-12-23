@@ -13,6 +13,75 @@
         android:theme="@style/Theme.KIDING"
         tools:targetApi="31">
         <activity
+            android:name=".KikisdayRedComplete3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayPinkCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayPurpleCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday20Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday19Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday18Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday17Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday16Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayRandomDice4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayRedComplete2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayYellowCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayOrangeComplete2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday15Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday14Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday13Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday12Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Kikisday11Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayRandomDice3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayRedCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdaySkyblueCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayOrangeCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayBlueCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KikisdayGreenCompleteActivity"
+            android:exported="false" />
+        <activity
             android:name=".KikisdayRandomDice2Activity"
             android:exported="false" />
         <activity

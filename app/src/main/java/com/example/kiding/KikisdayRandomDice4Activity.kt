@@ -16,12 +16,13 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.example.kiding.databinding.ActivityKikisdayRandomDiceBinding
+import com.example.kiding.databinding.ActivityKikisdayRandomDice3Binding
+import com.example.kiding.databinding.ActivityKikisdayRandomDice4Binding
 import java.util.Random
 
-class KikisdayRandomDiceActivity : AppCompatActivity() {
+class KikisdayRandomDice4Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityKikisdayRandomDiceBinding
+    private lateinit var binding: ActivityKikisdayRandomDice4Binding
 
     private lateinit var chronometer: Chronometer
 
@@ -29,18 +30,13 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityKikisdayRandomDiceBinding.inflate(layoutInflater)
+        binding = ActivityKikisdayRandomDice4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         chronometer = binding.chronometer
         val elapsedTime = intent.getLongExtra("elapsedTime", 0)
         chronometer.base = SystemClock.elapsedRealtime() - elapsedTime
         chronometer.start()
-
-//        Glide.with(this)
-//            .load(R.drawable.dice_img2)
-//            .override(720, 399)
-//            .into(binding.dice)
 
         Log.d("currentNumber", intent.getIntExtra("currentNumber", 0).toString())
         val number = intent.getIntExtra("currentNumber", 0)
@@ -49,10 +45,14 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             chronometer.stop()
             val previousActivity = when (number) {
-                2 -> Kikisday2Activity::class.java
-                3 -> Kikisday3Activity::class.java
-                4 -> Kikisday4Activity::class.java
-                else -> KikisdaySongActivity::class.java
+                13 -> Kikisday13Activity::class.java
+                14 -> Kikisday14Activity::class.java
+                15 -> Kikisday15Activity::class.java
+                16 -> Kikisday16Activity::class.java
+                17 -> Kikisday17Activity::class.java
+                18 -> Kikisday18Activity::class.java
+                19 -> Kikisday19Activity::class.java
+                else -> Kikisday20Activity::class.java
             }
             intent = Intent(this, previousActivity)
             intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
@@ -88,10 +88,9 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
                     else -> R.raw.dice3
                 }
                 // gif로 전환
-                Glide.with(this@KikisdayRandomDiceActivity)
+                Glide.with(this@KikisdayRandomDice4Activity)
                     .asGif()
                     .load(randomDice)
-                    //.override(720, 399)
                     .listener(object : RequestListener<GifDrawable> {
                         override fun onLoadFailed(
                             e: GlideException?,
@@ -117,7 +116,7 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
                             resource?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
                                 override fun onAnimationEnd(drawable: Drawable?) {
                                     super.onAnimationEnd(drawable)
-                                    val randomNumber = when (randomDice) {
+                                    val randomNumber = when(randomDice) {
                                         R.raw.dice1 -> 1
                                         R.raw.dice2 -> 2
                                         else -> 3
@@ -127,21 +126,14 @@ class KikisdayRandomDiceActivity : AppCompatActivity() {
                                     Log.d("randomNumber", randomNumber.toString())
                                     Log.d("totalDice", totalDice.toString())
                                     val nextActivity = when (totalDice) {
-                                        2 -> Kikisday2Activity::class.java
-                                        3 -> Kikisday3Activity::class.java
-                                        4 -> Kikisday4Activity::class.java
-                                        5 -> Kikisday5Activity::class.java
-                                        6 -> Kikisday6Activity::class.java
-                                        else -> Kikisday7Activity::class.java
+                                        16 -> Kikisday16Activity::class.java
+                                        17 -> Kikisday17Activity::class.java
+                                        18 -> Kikisday18Activity::class.java
+                                        19 -> Kikisday19Activity::class.java
+                                        else -> Kikisday20Activity::class.java
                                     }
-                                    val intent = Intent(this@KikisdayRandomDiceActivity, nextActivity)
+                                    val intent = Intent(this@KikisdayRandomDice4Activity, nextActivity)
                                     intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
-                                    Log.d("randomNumber", randomNumber.toString())
-//                                    when (randomNumber) {
-//                                        1 -> intent.putExtra("dice", 1)
-//                                        2 -> intent.putExtra("dice", 2)
-//                                        else -> intent.putExtra("dice", 3)
-//                                    }
                                     intent.putExtra("dice", randomNumber)
                                     startActivity(intent)
                                 }

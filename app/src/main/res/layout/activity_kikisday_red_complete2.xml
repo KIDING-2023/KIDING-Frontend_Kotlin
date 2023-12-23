@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kikisday_3_dice_bg"
+    tools:context=".KikisdayRedComplete2Activity">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="13.16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="29.79dp"
+        android:layout_marginLeft="30.55dp"
+        android:src="@drawable/kikisday_back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.kiding.CustomChronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29.79dp"
+        android:layout_marginRight="29.5dp"
+        android:fontFamily="@font/nanum"
+        android:textSize="15sp"
+        android:textColor="#868686"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="336.93dp"
+        android:layout_height="370.14dp"
+        android:layout_marginTop="127.45dp"
+        android:src="@drawable/red_complete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

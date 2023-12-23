@@ -43,10 +43,13 @@ class KikisdayRandomDice2Activity : AppCompatActivity() {
 //            .override(720, 399)
 //            .into(binding.dice)
 
+        Log.d("currentNumber", intent.getIntExtra("currentNumber", 0).toString())
+        val number = intent.getIntExtra("currentNumber", 0)
+
         // 이전 화면으로 전환
         binding.backBtn.setOnClickListener {
             chronometer.stop()
-            val previousActivity = when (intent.getIntExtra("currentNumber", 0)) {
+            val previousActivity = when (number) {
                 5 -> Kikisday5Activity::class.java
                 6 -> Kikisday6Activity::class.java
                 7 -> Kikisday7Activity::class.java
@@ -130,7 +133,9 @@ class KikisdayRandomDice2Activity : AppCompatActivity() {
                                         7 -> Kikisday7Activity::class.java
                                         8 -> Kikisday8Activity::class.java
                                         9 -> Kikisday9Activity::class.java
-                                        else -> Kikisday10Activity::class.java
+                                        10 -> Kikisday10Activity::class.java
+                                        11 -> Kikisday11Activity::class.java
+                                        else -> Kikisday12Activity::class.java
                                     }
                                     val intent = Intent(this@KikisdayRandomDice2Activity, nextActivity)
                                     intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
