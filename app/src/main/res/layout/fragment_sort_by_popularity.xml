@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SortByPopularityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="sort by popularity" />
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="317.79dp"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/kikisday"
+                android:layout_width="231.11dp"
+                android:layout_height="317.79dp"
+                android:src="@drawable/kikisday_card"
+                android:layout_marginLeft="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13.18dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/kikisday"
+                app:layout_constraintTop_toTopOf="@id/kikisday">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="플레이 "
+                    android:textColor="#FF8A5B"
+                    android:textSize="11.38sp" />
+
+                <TextView
+                    android:id="@+id/kikisday_usercount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="00"
+                    android:textColor="#FF8A5B"
+                    android:textSize="11.38sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="명"
+                    android:textColor="#FF8A5B"
+                    android:textSize="11.38sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/space"
+                android:layout_width="231.11dp"
+                android:layout_height="317.79dp"
+                android:layout_marginLeft="11.43dp"
+                android:src="@drawable/space_card"
+                app:layout_constraintStart_toEndOf="@+id/kikisday"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13.18dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/space"
+                app:layout_constraintTop_toTopOf="@id/space">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="플레이 "
+                    android:textColor="#FFFFFF"
+                    android:textSize="11.38sp" />
+
+                <TextView
+                    android:id="@+id/space_usercount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="00"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11.38sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum"
+                    android:text="명"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11.38sp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
 
 </FrameLayout>
