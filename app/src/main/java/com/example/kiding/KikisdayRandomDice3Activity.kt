@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.os.SystemClock
 import android.util.Log
 import android.view.GestureDetector
@@ -134,10 +135,12 @@ class KikisdayRandomDice3Activity : AppCompatActivity() {
                                         16 -> Kikisday16Activity::class.java
                                         else -> Kikisday17Activity::class.java
                                     }
-                                    val intent = Intent(this@KikisdayRandomDice3Activity, nextActivity)
-                                    intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
-                                    intent.putExtra("dice", randomNumber)
-                                    startActivity(intent)
+                                    Handler().postDelayed({
+                                        val intent = Intent(this@KikisdayRandomDice3Activity, nextActivity)
+                                        intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
+                                        intent.putExtra("dice", randomNumber)
+                                        startActivity(intent)
+                                    }, 1500)
                                 }
                             })
 

@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.os.SystemClock
 import android.view.GestureDetector
 import android.view.MotionEvent
@@ -104,13 +105,15 @@ class KikisdayDiceActivity : AppCompatActivity() {
                             resource?.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
                                 override fun onAnimationEnd(drawable: Drawable?) {
                                     super.onAnimationEnd(drawable)
-                                    val intent = Intent(this@KikisdayDiceActivity, KikisdaySongActivity::class.java)
-                                    intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
-                                    intent.putExtra("currentNumber", 1)
-                                    startActivity(intent)
+                                    // Handler를 사용하여 KikisdaySongActivity 시작을 2초 지연
+                                    Handler().postDelayed({
+                                        val intent = Intent(this@KikisdayDiceActivity, KikisdaySongActivity::class.java)
+                                        intent.putExtra("elapsedTime", SystemClock.elapsedRealtime() - chronometer.base)
+                                        intent.putExtra("currentNumber", 1)
+                                        startActivity(intent)
+                                    }, 1500) // 2000 밀리초 = 2초
                                 }
                             })
-                            
                             return false
                         }
                     })
