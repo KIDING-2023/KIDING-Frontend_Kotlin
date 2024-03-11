@@ -4,12 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.kiding.databinding.ActivityLoginBinding
+import retrofit2.Call
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+
+    val api = RetroInterface.create()
 
     // 금지어 목록
     private val prohibitedWords = listOf("시발", "병신", "존나", "바보", "멍청이", "윤석열", "문재인", "박근혜", "이명박",
@@ -45,9 +51,24 @@ class LoginActivity : AppCompatActivity() {
                 }
                 // 가입 성공
                 else {
-                    intent = Intent(this, LoginSplashActivity::class.java)
-                    intent.putExtra("nickname", binding.inputNickname.text.toString())
-                    startActivity(intent)
+                    val newUser = SignupModel(binding.inputNickname.text.toString())
+                    api.signup(newUser).enqueue(object: retrofit2.Callback<SignupResult>{
+                        override fun onResponse(call: Call<SignupResult>, response: Response<SignupResult>) {
+                            val result = response.body()?.isSuccess ?: return
+                            if(result) {
+                                Toast.makeText(applicationContext, "회원가입 성공", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@LoginActivity, LoginSplashActivity::class.java)
+                                intent.putExtra("nickname", binding.inputNickname.text.toString())
+                                startActivity(intent)
+                            }
+                            else
+                                Toast.makeText(applicationContext, "회원가입 실패, 이미 존재하는 닉네임입니다.", Toast.LENGTH_SHORT).show()
+                        }
+
+                        override fun onFailure(call: Call<SignupResult>, t: Throwable) {
+                            Log.d("test", t.message.toString())
+                        }
+                    })
                 }
             }
         }
